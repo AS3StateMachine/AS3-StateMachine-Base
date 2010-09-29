@@ -6,7 +6,6 @@
  */
 package org.osflash.statemachine
 {
-import org.osflash.statemachine.base.*;
 import org.osflash.statemachine.core.IState;
 import org.osflash.statemachine.core.IStateMachine;
 import org.osflash.statemachine.core.ITransitionController;
