@@ -6,7 +6,7 @@ public class BaseStateTest extends BaseState {
 		super( "TestStateName" )
 	}
 
-	[Test (order="2")]
+	[Test]
 	public function test():void{
 		//test name
 		Assert.assertEquals("Name as defined in constructor", "TestStateName", name );
