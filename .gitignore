@@ -26,3 +26,5 @@ doc/*
 *.iml
 *.ipr
 *.iws
+
+AS3-StateMachine-Base_temp_flex_config.xml
