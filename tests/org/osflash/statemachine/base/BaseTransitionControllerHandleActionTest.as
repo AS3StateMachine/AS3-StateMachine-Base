@@ -6,10 +6,7 @@ public class BaseTransitionControllerHandleActionTest extends BaseTransitionCont
 	private var _payload:Object;
 	private var _action:String;
 
-	public function BaseTransitionControllerHandleActionTest(){
-		super();
-	}
-
+	
     [Before]
     public function before():void {
         _action = "testAction";
