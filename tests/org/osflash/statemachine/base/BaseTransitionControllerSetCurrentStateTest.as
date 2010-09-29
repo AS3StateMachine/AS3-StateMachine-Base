@@ -24,7 +24,7 @@ public class BaseTransitionControllerSetCurrentStateTest extends BaseTransitionC
         // set state
         setCurrentState( _baseState );
         // test success
-        Assert.assertStrictlyEquals("The currentState should be the one passed up", _baseState, currentState );
+        Assert.assertStrictlyEquals("The currentState should be the one that was passed up", _baseState, currentState );
         // clean up
         destroy();
         // and test
