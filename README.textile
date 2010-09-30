@@ -8,7 +8,7 @@ To keep the utility:
 * as simple as the original, but to give greater flexibility for customisation.
 * free from any framework dependencies.
 * free from any comms bus dependencies (events, signals, notifications).
-* free from any data dependencies.
+* free from any data dependencies (for declaring the FSM).
 
 "Robotlegs Website":http://www.robotlegs.org
 "PureMVC Website":http://www.puremvc.org
