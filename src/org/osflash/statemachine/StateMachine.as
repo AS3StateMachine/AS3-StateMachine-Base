@@ -48,7 +48,9 @@ public class StateMachine implements IStateMachine
     /**
      * @inheritDoc
      */
-    public function get currentStateName():String { return transitionController.currentState.name.valueOf(); }
+    public function get currentStateName():String {
+	    return (transitionController.currentState == null) ? null : transitionController.currentState.name.valueOf();
+    }
 
     /**
      * @inheritDoc
@@ -103,11 +105,13 @@ public class StateMachine implements IStateMachine
      * @param action
      * @param payload
      */
-    protected function doAction(action:String, payload:Object ):void{
+    protected function doAction(action:String, payload:Object ):Boolean{
+	    if (transitionController.currentState == null)return false;
         var newStateTarget:String = transitionController.currentState.getTarget( action );
         var newState:IState = IState( states[ newStateTarget ] );
-        if( newState )
-            transitionTo( newState, payload );
+        if( newState != null ) transitionTo( newState, payload );
+	    else return false;
+	    return true;
     }
 
     /**
