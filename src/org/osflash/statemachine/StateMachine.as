@@ -55,7 +55,7 @@ public class StateMachine implements IStateMachine
     /**
      * @inheritDoc
      */
-    public function onRegister():void{
+    public function onRegister():void{	    
         if ( initial )
             transitionTo( initial, null );
     }
