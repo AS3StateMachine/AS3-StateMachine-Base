@@ -12,9 +12,9 @@ To keep the utility:
 
 These are the base classes only, implementations are listed below
 
-#"Standard StateMachine for Robotlegs":http://github.com/neilmanuell/AS3-Standard-StateMachine-for-Robotlegs
-#"Enhanced StateMachine for Robotlegs":http://github.com/neilmanuell/AS3-Enhanced-StateMachine-for-Robotlegs
-#"Signal StateMachine for Robotlegs":http://github.com/neilmanuell/AS3-Signal-StateMachine-for-Robotlegs
+# "Standard StateMachine for Robotlegs":http://github.com/neilmanuell/AS3-Standard-StateMachine-for-Robotlegs
+# "Enhanced StateMachine for Robotlegs":http://github.com/neilmanuell/AS3-Enhanced-StateMachine-for-Robotlegs
+# "Signal StateMachine for Robotlegs":http://github.com/neilmanuell/AS3-Signal-StateMachine-for-Robotlegs
 
 "Robotlegs Website":http://www.robotlegs.org
 "PureMVC Website":http://www.puremvc.org
