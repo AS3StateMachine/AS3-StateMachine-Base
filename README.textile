@@ -21,7 +21,7 @@ Coming soon (well, eventually)
 # "Standard StateMachine for pureMVC:" replicates the original utilities functionality.
 # "Enhanced StateMachine for pureMVC:"
 
-h3. Links
+h3. Links:
 "What is a Finite State Machine? (wikipedia definition)":http://en.wikipedia.org/wiki/Finite-state_machine
 "Robotlegs Website":http://www.robotlegs.org
 "PureMVC Website":http://www.puremvc.org
