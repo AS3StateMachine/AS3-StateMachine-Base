@@ -1,7 +1,7 @@
 package org.osflash.statemachine {
 import org.flexunit.Assert;
 import org.osflash.statemachine.base.BaseState;
-import org.osflash.statemachine.support.SetCurrentStateTransitionController;
+import org.osflash.statemachine.supporting.SetCurrentStateTransitionController;
 
 public class StateMachineOnRegisterTest extends StateMachine {
 	public function StateMachineOnRegisterTest(){

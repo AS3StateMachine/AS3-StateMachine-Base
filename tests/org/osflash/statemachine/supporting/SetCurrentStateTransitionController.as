@@ -1,4 +1,4 @@
-package org.osflash.statemachine.support {
+package org.osflash.statemachine.supporting {
 import org.osflash.statemachine.base.BaseTransitionController;
 import org.osflash.statemachine.core.IState;
 

@@ -1,7 +1,7 @@
 package org.osflash.statemachine {
 import org.osflash.statemachine.base.BaseState;
 import org.osflash.statemachine.base.BaseTransitionController;
-import org.osflash.statemachine.support.IsTransitionTrueTransitionController;
+import org.osflash.statemachine.supporting.IsTransitionTrueTransitionController;
 
 public class StateMachineTranstionErrorTest extends StateMachine {
 	public function StateMachineTranstionErrorTest(){

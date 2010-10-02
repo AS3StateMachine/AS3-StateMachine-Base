@@ -1,4 +1,4 @@
-package org.osflash.statemachine.support {
+package org.osflash.statemachine.supporting {
 import org.osflash.statemachine.base.BaseState;
 import org.osflash.statemachine.base.BaseXMLStateDecoder;
 import org.osflash.statemachine.core.IState;

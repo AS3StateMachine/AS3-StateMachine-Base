@@ -2,9 +2,9 @@ package org.osflash.statemachine {
 import org.flexunit.Assert;
 import org.osflash.statemachine.base.BaseTransitionController;
 import org.osflash.statemachine.core.IStateMachine;
-import org.osflash.statemachine.support.MockXMLStateDecoder;
-import org.osflash.statemachine.support.SetCurrentStateTransitionController;
-import org.osflash.statemachine.support.StateDefinitions;
+import org.osflash.statemachine.supporting.MockXMLStateDecoder;
+import org.osflash.statemachine.supporting.SetCurrentStateTransitionController;
+import org.osflash.statemachine.supporting.StateDefinitions;
 
 public class FSMInjectorInjectionTest extends FSMInjector {
 	

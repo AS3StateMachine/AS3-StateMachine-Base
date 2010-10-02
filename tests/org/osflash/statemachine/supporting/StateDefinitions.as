@@ -1,4 +1,4 @@
-package org.osflash.statemachine.support {
+package org.osflash.statemachine.supporting {
 public class StateDefinitions {
 	////////
 	// State Machine Constants and Vars

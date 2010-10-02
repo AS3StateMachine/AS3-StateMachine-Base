@@ -1,6 +1,6 @@
 package org.osflash.statemachine.base {
 import org.flexunit.Assert;
-import org.osflash.statemachine.support.StateDefinitions;
+import org.osflash.statemachine.supporting.StateDefinitions;
 
 public class BaseXMLDecoderIsInitialTest extends BaseXMLStateDecoder {
 
