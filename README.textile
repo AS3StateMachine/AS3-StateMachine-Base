@@ -10,12 +10,13 @@ To keep the utility:
 * free from any comms bus dependencies (events, signals, notifications).
 * free from any data dependencies (for declaring the FSM).
 
-These are the base classes only, implementations are listed below
+These are the base classes only, concrete implementations are listed below
 
-# "Standard StateMachine for Robotlegs":http://github.com/neilmanuell/AS3-Standard-StateMachine-for-Robotlegs
-# "Enhanced StateMachine for Robotlegs":http://github.com/neilmanuell/AS3-Enhanced-StateMachine-for-Robotlegs
+# "Standard Event StateMachine":http://github.com/neilmanuell/AS3-Standard-Event-StateMachine this is an Event - driven FSM with no frame work dependacies, can be used in any event driven frame work (eg Robotlegs)
+# "Enhanced Event StateMachine":http://github.com/neilmanuell/AS3-Enhanced-Event-StateMachine
 # "Signal StateMachine for Robotlegs":http://github.com/neilmanuell/AS3-Signal-StateMachine-for-Robotlegs
 
+h2 Links
 "Robotlegs Website":http://www.robotlegs.org
 "PureMVC Website":http://www.puremvc.org
 "My Website":http:/revisual.co.uk
