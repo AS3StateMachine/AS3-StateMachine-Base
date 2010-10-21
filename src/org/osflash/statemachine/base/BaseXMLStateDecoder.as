@@ -64,5 +64,9 @@ public class BaseXMLStateDecoder implements IStateDecoder
         var initial:String = _fsm.@initial.toString();
         return (stateName == initial);
     }
+
+	public function destroy():void{
+		_fsm = null;
+	}
 }
 }

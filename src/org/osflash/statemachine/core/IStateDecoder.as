@@ -22,6 +22,8 @@ public interface IStateDecoder
     function isInitial( stateName:String ):Boolean;
 
     function getStateList():Array;
+
+	function destroy():void;
     
 }
 }
