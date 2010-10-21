@@ -1,0 +1,7 @@
+h2. Change log
+
+h3. AS3-StateMachine-Base-V1-0-001: 21/10/2010
+* IFSMInjector: added destroy method
+* IStateDecoder: added destroy method
+* FSMInjector: implemented destroy method
+* BaseXMLStateDecoder: implemented destroy method
