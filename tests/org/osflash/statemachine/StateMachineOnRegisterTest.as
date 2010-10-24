@@ -10,18 +10,18 @@ public class StateMachineOnRegisterTest extends StateMachine {
 
 	[Before]
 	public function before():void{
-		 initial = new BaseState( "state/Initial");
+		 _initial = new BaseState( "state/Initial");
 	}
 
 	[After]
 	public function after():void{
-		 initial = null;
+		 _initial = null;
 	}
 
 	 [Test]
     public function test():void{
         onRegister();
-        Assert.assertEquals( "currentStateName should equal the initial state name", initial.name, currentStateName);
+        Assert.assertEquals( "currentStateName should equal the initial state name", _initial.name, currentStateName);
     }
 }
 }

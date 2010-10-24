@@ -20,10 +20,10 @@ public class FSMInjectorDestroyTest extends FSMInjector {
 
 	[Test]
 	public function test ():void	{
-		Assert.assertStrictlyEquals( "the stateDecoder, should be the one set in the constructor",_testDecoder, stateDecoder );
+		Assert.assertStrictlyEquals( "the stateDecoder, should be the one set in the constructor",_testDecoder, _stateDecoder );
 		Assert.assertFalse( "the destroy method in the stateDecoder should not yet have been called", MockXMLStateDecoder(_testDecoder).hasDestroyMethodBeenCalled );
 		destroy();
-		Assert.assertNull( "the stateDecoder should now be null", stateDecoder );
+		Assert.assertNull( "the stateDecoder should now be null", _stateDecoder );
 		Assert.assertTrue( "the destroy method on the stateDecoder should have been called", MockXMLStateDecoder(_testDecoder).hasDestroyMethodBeenCalled );
 	}
 

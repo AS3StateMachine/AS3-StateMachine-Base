@@ -45,7 +45,7 @@ public class BaseStateTest extends BaseState {
 		//
 		destroy();
 		// test transitions is null
-		Assert.assertNull( "Transition property should be null after calling destroy()", transitions );
+		Assert.assertNull( "Transition property should be null after calling destroy()", _transitions );
 	}
 
 }
