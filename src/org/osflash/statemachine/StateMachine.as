@@ -24,24 +24,24 @@ public class StateMachine implements IStateMachine
     /**
      * Map of States objects by name.
      */
-    protected var states:Object = new Object();
+    protected var _states:Object = new Object();
 
     /**
      * The initial state of the FSM.
      */
-    protected var initial:IState;
+    protected var _initial:IState;
 
     /**
      * The ITransitionController instance.
      */
-    protected var transitionController:ITransitionController;
+    protected var _transitionController:ITransitionController;
 
     /**
      * Constructor
      * @param controller the ITransitionController instance
      */
     public function StateMachine( controller:ITransitionController ):void{
-        transitionController = controller;
+        _transitionController = controller;
         initiate()
     }
 
@@ -49,29 +49,29 @@ public class StateMachine implements IStateMachine
      * @private
      */
     private function initiate():void {
-        transitionController.actionCallback = doAction;
+        _transitionController.actionCallback = doAction;
     }
 
     /**
      * @inheritDoc
      */
     public function get currentStateName():String {
-	    return (transitionController.currentState == null) ? null : transitionController.currentState.name.valueOf();
+	    return (_transitionController.currentState == null) ? null : _transitionController.currentState.name.valueOf();
     }
 
     /**
      * @inheritDoc
      */
     public function onRegister():void{
-        if ( initial )
-            transitionTo( initial, null );
+        if ( _initial )
+            transitionTo( _initial, null );
     }
 
     /**
      * @inheritDoc
      */
     public function hasState(stateName:String):Boolean {
-        return ( states[ stateName ] != null );
+        return ( _states[ stateName ] != null );
     }
 
     /**
@@ -80,8 +80,8 @@ public class StateMachine implements IStateMachine
     public function registerState( state:IState, initial:Boolean=false ):Boolean
     {
         if ( state == null || hasState( state.name ) ) return false;
-        states[ state.name ] = state;
-        if ( initial ) this.initial = IState( state );
+        _states[ state.name ] = state;
+        if ( initial ) this._initial = IState( state );
         return true;
     }
 
@@ -90,7 +90,7 @@ public class StateMachine implements IStateMachine
      */
     public function removeState( stateName:String ):Boolean{
         if( !hasState( stateName ) ) return false;
-        delete states[ stateName ];
+        delete _states[ stateName ];
         return true;
     }
 
@@ -98,11 +98,11 @@ public class StateMachine implements IStateMachine
      * @inheritDoc
      */
     public function destroy():void{
-        transitionController.destroy();
-        for each ( var state:IState in states )  state.destroy();
-        states = null;
-        initial = null;
-        transitionController = null;
+        _transitionController.destroy();
+        for each ( var state:IState in _states )  state.destroy();
+        _states = null;
+        _initial = null;
+        _transitionController = null;
     }
 
     /**
@@ -114,9 +114,9 @@ public class StateMachine implements IStateMachine
      * @returns Whether a transition has been successfully triggered or not
      */
     protected function doAction(action:String, payload:Object ):Boolean{
-	    if (transitionController.currentState == null)return false;
-        var newStateTarget:String = transitionController.currentState.getTarget( action );
-        var newState:IState = IState( states[ newStateTarget ] );
+	    if (_transitionController.currentState == null)return false;
+        var newStateTarget:String = _transitionController.currentState.getTarget( action );
+        var newState:IState = IState( _states[ newStateTarget ] );
         if( newState != null ) return transitionTo( newState, payload );
 	    else return false;
     }
@@ -131,9 +131,9 @@ public class StateMachine implements IStateMachine
      */
     protected function transitionTo( targetState:IState, payload:Object=null ):Boolean{
         if( targetState == null ) return false;
-        if( transitionController.isTransitioning )
+        if( _transitionController.isTransitioning )
             throw new StateTransitionError( StateTransitionError.ALREADY_TRANSITIONING);
-        transitionController.transition( targetState, payload);
+        _transitionController.transition( targetState, payload);
 	    return true;
     }
 

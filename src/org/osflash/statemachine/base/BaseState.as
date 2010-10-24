@@ -15,7 +15,7 @@ public class BaseState implements IState {
 	/**
 	 *  Transition map of actions to target states.
 	 */
-	protected var transitions:Object = new Object();
+	protected var _transitions:Object = new Object();
 
 	/**
 	 * @private
@@ -40,7 +40,7 @@ public class BaseState implements IState {
 	 */
 	public function defineTrans( action:String, target:String ):Boolean{
 		if( hasTrans( action ) ) return false;
-		transitions[ action ] = target;
+		_transitions[ action ] = target;
 		return true;
 	}
 
@@ -48,8 +48,8 @@ public class BaseState implements IState {
 	 * @inheritDoc
 	 */
 	public function hasTrans( action:String ):Boolean{
-		if( transitions == null ) return false;
-		return ( transitions[ action ] != null );
+		if( _transitions == null ) return false;
+		return ( _transitions[ action ] != null );
 	}
 
 	/**
@@ -57,7 +57,7 @@ public class BaseState implements IState {
 	 */
 	public function removeTrans( action:String ):Boolean{
 		if( getTarget( action ) == null ) return false;
-		delete transitions[ action ];
+		delete _transitions[ action ];
 		return true;
 	}
 
@@ -65,14 +65,14 @@ public class BaseState implements IState {
 	 * @inheritDoc
 	 */
 	public function getTarget( action:String ):String{
-		return transitions[ action ];
+		return _transitions[ action ];
 	}
 
 	/**
 	 * @inheritDoc
 	 */
 	public function destroy():void{
-		transitions = null;
+		_transitions = null;
 	}
 }
 }

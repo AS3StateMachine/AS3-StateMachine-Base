@@ -34,14 +34,14 @@ public class FSMInjector implements IFSMInjector {
 	/**
 	 * The instance of the IStateDecoder
 	 */
-	protected var stateDecoder:IStateDecoder;
+	protected var _stateDecoder:IStateDecoder;
 
 	/**
 	 * Creates an instance of the FSMInjector.
 	 * @param stateDecoder the decoder to be used in this instance.
 	 */
 	public function FSMInjector( stateDecoder:IStateDecoder ){
-		this.stateDecoder = stateDecoder;
+		_stateDecoder = stateDecoder;
 	}
 
 	/**
@@ -49,15 +49,15 @@ public class FSMInjector implements IFSMInjector {
 	 * @param stateMachine the IStateMachine to inject
 	 */
 	public function inject( stateMachine:IStateMachine ):void{
-		var states:Array = stateDecoder.getStateList();
+		var states:Array = _stateDecoder.getStateList();
 		for each ( var state:IState in states )
 			stateMachine.registerState( state, isInitial( state.name ) );
 		stateMachine.onRegister();
 	}
 
 	public function destroy():void{
-		stateDecoder.destroy();
-		stateDecoder = null;
+		_stateDecoder.destroy();
+		_stateDecoder = null;
 	}
 
 	/**
@@ -66,7 +66,7 @@ public class FSMInjector implements IFSMInjector {
 	 * @return whether the given state name belongs to the initial state or not.
 	 */
 	protected function isInitial( stateName:String ):Boolean{
-		return stateDecoder.isInitial( stateName );
+		return _stateDecoder.isInitial( stateName );
 	}
 
 
