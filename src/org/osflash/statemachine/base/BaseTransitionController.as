@@ -18,7 +18,7 @@ public class BaseTransitionController implements ITransitionController
      */
     private var _cachedPayload:Object;
 
-    /**
+	/**
      * @private
      */
     private var _canceled:Boolean;
@@ -37,6 +37,8 @@ public class BaseTransitionController implements ITransitionController
      * @private
      */
     private var _actionCallback:Function;
+
+	public function BaseTransitionController(){}
 
     /**
      * @inheritDoc
