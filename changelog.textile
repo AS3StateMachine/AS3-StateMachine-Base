@@ -1,5 +1,12 @@
 h2. Change log
 
+h3. AS3-StateMachine-Base-V1-0-001: 24/10/2010
+* FSMInjector: prepended underscore to protected variable names
+* StateMachine: prepended underscore to protected variable names
+* BaseState: prepended underscore to protected variable names
+* BaseTransitionController: added empty constructor
+* SWC: removed test classes that were being compiled into swc
+
 h3. AS3-StateMachine-Base-V1-0-001: 21/10/2010
 * IFSMInjector: added destroy method
 * IStateDecoder: added destroy method
