@@ -27,6 +27,7 @@ Coming soon (well, eventually)
 
 h3. Links:
 
+"statemachine.org":http:/statemachine.org
 "What is a Finite State Machine? (wikipedia definition)":http://en.wikipedia.org/wiki/Finite-state_machine
 "Robotlegs Website":http://www.robotlegs.org
 "PureMVC Website":http://www.puremvc.org
