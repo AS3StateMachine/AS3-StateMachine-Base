@@ -39,7 +39,7 @@ public interface IStateMachine
     function onRegister( ):void;
 
     /**
-     * Destroy method.
+     * The destroy method for GC.
      */
     function destroy():void;
 }

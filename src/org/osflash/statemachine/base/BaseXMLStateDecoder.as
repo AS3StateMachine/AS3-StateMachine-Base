@@ -32,10 +32,8 @@ public class BaseXMLStateDecoder implements IStateDecoder
 	 */
 	protected function getData():XML{ return _fsm }
 
-    /**
-     * Iterates through the FSM definition, and returns an array of decoded states.
-     * @return the decoded IStates
-     */
+	/**
+	 * @inheritDoc	 */
     public function getStateList():Array {
         var stateList:Array = [];
         var stateDefs:XMLList = _fsm..state;
@@ -65,6 +63,9 @@ public class BaseXMLStateDecoder implements IStateDecoder
         return (stateName == initial);
     }
 
+	/**
+	 * The destroy method for GC
+	 */
 	public function destroy():void{
 		_fsm = null;
 	}

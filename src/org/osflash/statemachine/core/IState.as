@@ -1,7 +1,7 @@
 package org.osflash.statemachine.core
 {
 /**
- * The contract between concrete states and the FSM framework.
+ * The contract between concrete states and the StateMachine framework.
  */
 public interface IState
 {

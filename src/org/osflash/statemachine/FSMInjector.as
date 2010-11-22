@@ -45,16 +45,18 @@ public class FSMInjector implements IFSMInjector {
 	}
 
 	/**
-	 * Registers all the decoded states with the IStateMachine, then calls the onRegister method.
-	 * @param stateMachine the IStateMachine to inject
+	 * @inheritDoc
 	 */
-	public function inject( stateMachine:IStateMachine ):void{
+	public function inject( statemachine:IStateMachine ):void{
 		var states:Array = _stateDecoder.getStateList();
 		for each ( var state:IState in states )
-			stateMachine.registerState( state, isInitial( state.name ) );
-		stateMachine.onRegister();
+			statemachine.registerState( state, isInitial( state.name ) );
+		statemachine.onRegister();
 	}
 
+	/**
+	 * @inheritDoc
+	 */
 	public function destroy():void{
 		_stateDecoder.destroy();
 		_stateDecoder = null;

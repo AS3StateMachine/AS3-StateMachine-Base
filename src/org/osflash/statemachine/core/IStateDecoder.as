@@ -21,8 +21,15 @@ public interface IStateDecoder
      */
     function isInitial( stateName:String ):Boolean;
 
+	 /**
+     * Iterates through the FSM definition, and returns an array of decoded states.
+     * @return the decoded IStates
+     */
     function getStateList():Array;
 
+	/**
+	 * The destroy method for GC
+	 */
 	function destroy():void;
     
 }

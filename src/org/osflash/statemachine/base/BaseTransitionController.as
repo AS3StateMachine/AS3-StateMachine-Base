@@ -98,6 +98,10 @@ public class BaseTransitionController implements ITransitionController
      */
     protected function onTransition(target:IState, payload:Object):void{}
 
+	/**
+	 * Override to notify interested framework actors that the
+	 * state has changed.
+	 */
 	protected function dispatchGeneralStateChanged():void{}
 
     /**

@@ -18,6 +18,9 @@ import org.osflash.statemachine.errors.StateTransitionError;
  * are encapsulated within the <code>ITransitionController</code>
  * which controls the phases of the transition between states
  * </P>
+ *
+ * @ see ITransitionController
+ * @ see BaseTransitionController
  */
 public class StateMachine implements IStateMachine
 {
