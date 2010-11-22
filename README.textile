@@ -31,7 +31,7 @@ h3. Implementations
 # "Signal StateMachine for Robotlegs:":http://github.com/AS3StateMachine/AS3-Signal-StateMachine-for-Robotlegs this extension is specifically for use with Robotlegs using Signals.
 # "Standard StateMachine for pureMVC:":http://github.com/AS3StateMachine/AS3-Standard-StateMachine-for-PureMVC replicates the original utilities functionality.
 
-Coming soon (well, eventually)
+Coming soon (well, eventually).
 
 # "Enhanced StateMachine for pureMVC:"
 
