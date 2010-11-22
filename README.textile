@@ -16,10 +16,10 @@ To keep the utility:
 
 These are the base classes only, concrete implementations are listed below
 
-h3 Bins
+h3. Bins
 * "Version 1.0.002":http://statemachine.org/swcs/AS3-StateMachine-Base-V1-0-002.zip
 
-h3 Documentation
+h3. Documentation
 
 * "Documentation (base code only)":http://statemachine.org/docs
 * Tutorials - to come
