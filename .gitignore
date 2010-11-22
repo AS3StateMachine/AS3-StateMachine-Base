@@ -5,6 +5,7 @@
 /bin-release/*
 /out/*
 libs/*
+bin/*
 obj/*
 .idea/*
 
