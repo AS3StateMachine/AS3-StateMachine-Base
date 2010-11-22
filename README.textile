@@ -16,14 +16,21 @@ To keep the utility:
 
 These are the base classes only, concrete implementations are listed below
 
-* "Standard Event StateMachine:":http://github.com/AS3StateMachine/AS3-Standard-Event-StateMachine this extension can be used in any event driven framework (eg Robotlegs).
-* "Enhanced Event StateMachine:":http://github.com/AS3StateMachine/AS3-Enhanced-Event-StateMachine this extension can be used in any event driven framework (eg Robotlegs).
-* "Signal StateMachine for Robotlegs:":http://github.com/AS3StateMachine/AS3-Signal-StateMachine-for-Robotlegs this extension is specifically for use with Robotlegs using Signals.
-* "Standard StateMachine for pureMVC:":http://github.com/AS3StateMachine/AS3-Standard-StateMachine-for-PureMVC replicates the original utilities functionality.
+h3 Documentation
+
+* "Documentation (base code only)":http://statemachine.org/docs
+* Tutorials - to come
+
+h3. Implementations
+
+# "Standard Event StateMachine:":http://github.com/AS3StateMachine/AS3-Standard-Event-StateMachine this extension can be used in any event driven framework (eg Robotlegs).
+# "Enhanced Event StateMachine:":http://github.com/AS3StateMachine/AS3-Enhanced-Event-StateMachine this extension can be used in any event driven framework (eg Robotlegs).
+# "Signal StateMachine for Robotlegs:":http://github.com/AS3StateMachine/AS3-Signal-StateMachine-for-Robotlegs this extension is specifically for use with Robotlegs using Signals.
+# "Standard StateMachine for pureMVC:":http://github.com/AS3StateMachine/AS3-Standard-StateMachine-for-PureMVC replicates the original utilities functionality.
 
 Coming soon (well, eventually)
 
-* "Enhanced StateMachine for pureMVC:"
+# "Enhanced StateMachine for pureMVC:"
 
 h3. Links:
 
