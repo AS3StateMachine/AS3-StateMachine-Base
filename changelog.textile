@@ -1,5 +1,9 @@
 h2. Change log
 
+h3. AS3-StateMachine-Base-V1-1-000: 27/11/2010
+* BaseTransitionController: added protected method setIsTransitioning
+  This allows Subclasses to override it and add functionality
+
 h3. AS3-StateMachine-Base-V1-0-001: 24/10/2010
 * FSMInjector: prepended underscore to protected variable names
 * StateMachine: prepended underscore to protected variable names
