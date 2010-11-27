@@ -70,14 +70,13 @@ public class BaseTransitionController implements ITransitionController
      */
     protected function get cachedPayload():Object{ return _cachedPayload; }
 
-
     /**
      * @inheritDoc
      */
     final public function transition( target:IState, payload:Object = null):void{
-        _isTransitioning = true;
+        setIsTransitioning( true );
         onTransition(target, payload);
-        _isTransitioning = false;
+        setIsTransitioning( false );
 		if(!isCanceled)dispatchGeneralStateChanged();
         reset();
     }
@@ -109,6 +108,14 @@ public class BaseTransitionController implements ITransitionController
      * @param state
      */
     protected function setCurrentState( state:IState):void{ _currentState = state; }
+
+	/**
+	 * Sets the current transitional status of the StateMachine.
+	 * NB subclasses should not call it, but can override to add functionality
+	 * @param value
+	 */
+	protected function setIsTransitioning( value:Boolean ):void{ _isTransitioning = value; }
+
 
     /**
      * Starts a new transition
