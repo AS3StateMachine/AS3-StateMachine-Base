@@ -1,6 +1,6 @@
 h2. Finite State Machine: An AS3 utility
 
-Version 1.1.000
+Version 1.1.001
 This utility is a re-architecturing of the "pureMVC original":http://trac.puremvc.org/Utility_AS3_StateMachine with the following notice:
 
 Copyright (c) 2008 Neil Manuell, Cliff Hall.
@@ -17,6 +17,7 @@ To keep the utility:
 These are the base classes only, concrete implementations are listed below
 
 h3. Bins
+* "Version 1.1.001":http://statemachine.org/swcs/AS3-StateMachine-Base-V1-1-001.zip
 * "Version 1.1.000":http://statemachine.org/swcs/AS3-StateMachine-Base-V1-1-000.zip
 * "Version 1.0.002":http://statemachine.org/swcs/AS3-StateMachine-Base-V1-0-002.zip
 
