@@ -10,6 +10,11 @@ public interface IState
      */
     function get name():String;
 
+	/**
+	 * The number of transitions defined in this state
+	 */
+	function get length():int;
+
     /**
      * Defines a transition.
      * A transition requires the name of the triggering action, and the name of the state to which the FSM will move towards.
