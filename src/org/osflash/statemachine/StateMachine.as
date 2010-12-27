@@ -7,10 +7,13 @@
 package org.osflash.statemachine
 {
 import org.osflash.statemachine.core.IState;
-import org.osflash.statemachine.core.IStateMachine;
+	import org.osflash.statemachine.core.IStateLogger;
+	import org.osflash.statemachine.core.IStateMachine;
 import org.osflash.statemachine.core.ITransitionController;
 import org.osflash.statemachine.errors.StateTransitionError;
-/**
+	import org.osflash.statemachine.logging.TraceStateLogger;
+
+	/**
  * A Finite State Machine implementation.
  * <P>
  * Handles registration and removal of state definitions.
@@ -22,8 +25,9 @@ import org.osflash.statemachine.errors.StateTransitionError;
  * @ see ITransitionController
  * @ see BaseTransitionController
  */
-public class StateMachine implements IStateMachine
+public class StateMachine implements IStateMachine, IStateLogger
 {
+
     /**
      * Map of States objects by name.
      */
@@ -39,12 +43,18 @@ public class StateMachine implements IStateMachine
      */
     protected var _transitionController:ITransitionController;
 
+	private var _logger:IStateLogger;
+
+	private var _debug:Boolean;
+
     /**
      * Constructor
      * @param controller the ITransitionController instance
      */
-    public function StateMachine( controller:ITransitionController ):void{
+    public function StateMachine( controller:ITransitionController, debug:Boolean = false, logger:IStateLogger=null ):void{
         _transitionController = controller;
+	    _debug = debug;
+	    _logger = logger || new TraceStateLogger("FSM:: ");
         initiate()
     }
 
@@ -53,6 +63,7 @@ public class StateMachine implements IStateMachine
      */
     private function initiate():void {
         _transitionController.actionCallback = doAction;
+	    if( _debug ) _transitionController.logCallback = log;
     }
 
     /**
@@ -108,6 +119,10 @@ public class StateMachine implements IStateMachine
         _transitionController = null;
     }
 
+	public function log( msg:String, level:int = 2 ):void{
+		if( _debug )_logger.log(msg,level);
+	}
+
     /**
      * Initiates the transition process.
      * This method is set as the ITranstionController's actionCallback property
@@ -121,7 +136,8 @@ public class StateMachine implements IStateMachine
         var newStateTarget:String = _transitionController.currentState.getTarget( action );
         var newState:IState = IState( _states[ newStateTarget ] );
         if( newState != null ) return transitionTo( newState, payload );
-	    else return false;
+        log("ACTION: " + action + "is not defined in STATE: " + currentStateName);
+	    return false;
     }
 
     /**
@@ -139,6 +155,7 @@ public class StateMachine implements IStateMachine
         _transitionController.transition( targetState, payload);
 	    return true;
     }
+
 
 }
 }
