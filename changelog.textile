@@ -1,6 +1,6 @@
 h2. Change log
 
-h3. AS3-StateMachine-Base-V1-2-000: 2/13/2010
+h3. AS3-StateMachine-Base-V1-2-000: 31/12/2010
 * ILoggable: added interface for capturing log messages.
 * TraceStateLogger: implementation of ILoggable that wraps a trace statement.
 * StateMachine: now implements ILoggable and logs appropriate stages.
