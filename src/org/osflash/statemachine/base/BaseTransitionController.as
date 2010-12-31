@@ -1,13 +1,13 @@
 package org.osflash.statemachine.base
 {
+	import org.osflash.statemachine.core.ILoggable;
 	import org.osflash.statemachine.core.IState;
-	import org.osflash.statemachine.core.IStateLogger;
 	import org.osflash.statemachine.core.ITransitionController;
 
 	/**
  * Abstract class for creating custom state transitions
  */
-public class BaseTransitionController implements ITransitionController, IStateLogger
+public class BaseTransitionController implements ITransitionController, ILoggable
 {
     /**
      * @private
@@ -38,9 +38,11 @@ public class BaseTransitionController implements ITransitionController, IStateLo
      * @private
      */
     private var _actionCallback:Function;
-	private var _logCallback:Function;
+	private var _logger:ILoggable;
 
-	public function BaseTransitionController(){}
+	public function BaseTransitionController( logger:ILoggable=null){
+		_logger = logger;
+	}
 
     /**
      * @inheritDoc
@@ -51,8 +53,6 @@ public class BaseTransitionController implements ITransitionController, IStateLo
      * @inheritDoc
      */
     public function set actionCallback( value:Function ):void{ _actionCallback = value; }
-
-	public function set logCallback( value:Function ):void{ _logCallback = value; }
 
     /**
      * @inheritDoc
@@ -77,7 +77,7 @@ public class BaseTransitionController implements ITransitionController, IStateLo
     /**
      * @inheritDoc
      */
-    final public function transition( target:IState, payload:Object = null):void{
+    public final function transition( target:IState, payload:Object = null):void{
         setIsTransitioning( true );
         onTransition(target, payload);
         setIsTransitioning( false );
@@ -86,7 +86,10 @@ public class BaseTransitionController implements ITransitionController, IStateLo
         reset();
     }
 
-	private function cancelTransition():void{
+	 /**
+     * @private
+     */
+	protected final function cancelTransition():void{
 		 _canceled = false;
 		log( "Transtition has been cancelled");
 		dispatchCancelled();
@@ -102,8 +105,12 @@ public class BaseTransitionController implements ITransitionController, IStateLo
         _actionCallback = null;
     }
 
+	/**
+     * @inheritDoc
+     */
 	public function log( msg:String, level:int = 2 ):void{
-		if( _logCallback != null) _logCallback( msg, level );
+		if( _logger != null)
+			_logger.log( msg, level );
 	}
 
     /**
@@ -119,10 +126,11 @@ public class BaseTransitionController implements ITransitionController, IStateLo
 	 */
 	protected function dispatchGeneralStateChanged():void{}
 
-	protected function dispatchCancelled():void{
-
-
-	}
+	/**
+	 * Override to notify interested framework actors that the
+	 * state transition has been cancelled.
+	 */
+	protected function dispatchCancelled():void{}
 
     /**
      * Sets the current state of the FSM.
