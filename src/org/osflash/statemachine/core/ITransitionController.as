@@ -25,8 +25,6 @@ public interface ITransitionController
      */
     function set actionCallback( value:Function ):void;
 
-	function set logCallback( value:Function ):void;
-
     /**
      * Called by the StateMachine to start the transition process.
      * @param targetState the state transitioning to.
