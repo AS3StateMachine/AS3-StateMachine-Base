@@ -1,6 +1,15 @@
 h2. Change log
 
-h3. AS3-StateMachine-Base-V1-1-001: 2/13/2010
+h3. AS3-StateMachine-Base-V1-2-000: 2/13/2010
+* ILoggable: added interface for capturing log messages.
+* TraceStateLogger: implementation of ILoggable that wraps a trace statement.
+* StateMachine: now implements ILoggable and logs appropriate stages.
+* BaseTransitionController: now implements ILoggable and logs appropriate stages.
+* BaseTransitionController: Removed Cancelled phase from the main transition
+  into its own dispatchedCancelled protected method. This solves circular
+  cancellations with actioning from a cancelled phase.
+
+ h3. AS3-StateMachine-Base-V1-1-001: 2/13/2010
 * IState: added getter length to retrieve the number of transitions
   defined.
 
