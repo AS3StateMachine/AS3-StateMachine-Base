@@ -7,7 +7,7 @@
 package org.osflash.statemachine
 {
 import org.osflash.statemachine.core.IState;
-	import org.osflash.statemachine.core.IStateLogger;
+	import org.osflash.statemachine.core.ILoggable;
 	import org.osflash.statemachine.core.IStateMachine;
 import org.osflash.statemachine.core.ITransitionController;
 import org.osflash.statemachine.errors.StateTransitionError;
@@ -25,7 +25,7 @@ import org.osflash.statemachine.errors.StateTransitionError;
  * @ see ITransitionController
  * @ see BaseTransitionController
  */
-public class StateMachine implements IStateMachine, IStateLogger
+public class StateMachine implements IStateMachine, ILoggable
 {
 
     /**
@@ -43,17 +43,18 @@ public class StateMachine implements IStateMachine, IStateLogger
      */
     protected var _transitionController:ITransitionController;
 
-	private var _logger:IStateLogger;
+	/**
+	 * The logger instance;
+	 */
+	private var _logger:ILoggable;
 
-	private var _debug:Boolean;
-
-    /**
-     * Constructor
-     * @param controller the ITransitionController instance
-     */
-    public function StateMachine( controller:ITransitionController, debug:Boolean = false, logger:IStateLogger=null ):void{
+	/**
+	 * Constructor
+	 * @param controller the ITransitionController instance
+	 * @param logger the logger instance
+	 */
+    public function StateMachine( controller:ITransitionController, logger:ILoggable=null ):void{
         _transitionController = controller;
-	    _debug = debug;
 	    _logger = logger || new TraceStateLogger("FSM:: ");
         initiate()
     }
@@ -63,7 +64,6 @@ public class StateMachine implements IStateMachine, IStateLogger
      */
     private function initiate():void {
         _transitionController.actionCallback = doAction;
-	    if( _debug ) _transitionController.logCallback = log;
     }
 
     /**
@@ -119,8 +119,12 @@ public class StateMachine implements IStateMachine, IStateLogger
         _transitionController = null;
     }
 
+	 /**
+     * @inheritDoc
+     */
 	public function log( msg:String, level:int = 2 ):void{
-		if( _debug )_logger.log(msg,level);
+		if( _logger != null )
+			_logger.log(msg,level);
 	}
 
     /**
