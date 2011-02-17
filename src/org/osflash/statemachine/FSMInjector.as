@@ -31,45 +31,49 @@ import org.osflash.statemachine.core.IStateMachine;
  */
 public class FSMInjector implements IFSMInjector {
 
-	/**
-	 * The instance of the IStateDecoder
-	 */
-	protected var _stateDecoder:IStateDecoder;
+    /**
+     * The instance of the IStateDecoder
+     */
+    protected var _stateDecoder:IStateDecoder;
 
-	/**
-	 * Creates an instance of the FSMInjector.
-	 * @param stateDecoder the decoder to be used in this instance.
-	 */
-	public function FSMInjector( stateDecoder:IStateDecoder ){
-		_stateDecoder = stateDecoder;
-	}
+    /**
+     * Creates an instance of the FSMInjector.
+     * @param stateDecoder the decoder to be used in this instance.
+     */
+    public function FSMInjector( stateDecoder:IStateDecoder )
+    {
+        _stateDecoder = stateDecoder;
+    }
 
-	/**
-	 * @inheritDoc
-	 */
-	public function inject( statemachine:IStateMachine ):void{
-		var states:Array = _stateDecoder.getStateList();
-		for each ( var state:IState in states )
-			statemachine.registerState( state, isInitial( state.name ) );
-		statemachine.onRegister();
-	}
+    /**
+     * @inheritDoc
+     */
+    public function inject( statemachine:IStateMachine ):void
+    {
+        var states:Array = _stateDecoder.getStateList();
+        for each ( var state:IState in states )
+            statemachine.registerState( state, isInitial( state.name ) );
+        statemachine.onRegister();
+    }
 
-	/**
-	 * @inheritDoc
-	 */
-	public function destroy():void{
-		_stateDecoder.destroy();
-		_stateDecoder = null;
-	}
+    /**
+     * @inheritDoc
+     */
+    public function destroy():void
+    {
+        _stateDecoder.destroy();
+        _stateDecoder = null;
+    }
 
-	/**
-	 * Determines whether the state name passed belongs to the initial state
-	 * @param stateName
-	 * @return whether the given state name belongs to the initial state or not.
-	 */
-	protected function isInitial( stateName:String ):Boolean{
-		return _stateDecoder.isInitial( stateName );
-	}
+    /**
+     * Determines whether the state name passed belongs to the initial state
+     * @param stateName
+     * @return whether the given state name belongs to the initial state or not.
+     */
+    protected function isInitial( stateName:String ):Boolean
+    {
+        return _stateDecoder.isInitial( stateName );
+    }
 
 
 }

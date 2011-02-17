@@ -1,10 +1,8 @@
-package org.osflash.statemachine.core
-{
+package org.osflash.statemachine.core {
 /**
  * Contract with FSMInjector to encapsulate creation of concrete IState instances.
  */
-public interface IStateDecoder
-{
+public interface IStateDecoder {
     function setData( value:Object ):void;
 
     /**
@@ -21,16 +19,16 @@ public interface IStateDecoder
      */
     function isInitial( stateName:String ):Boolean;
 
-	 /**
+    /**
      * Iterates through the FSM definition, and returns an array of decoded states.
      * @return the decoded IStates
      */
     function getStateList():Array;
 
-	/**
-	 * The destroy method for GC
-	 */
-	function destroy():void;
-    
+    /**
+     * The destroy method for GC
+     */
+    function destroy():void;
+
 }
 }
