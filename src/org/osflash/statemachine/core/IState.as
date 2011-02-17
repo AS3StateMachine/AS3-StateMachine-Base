@@ -1,19 +1,19 @@
-package org.osflash.statemachine.core
-{
+package org.osflash.statemachine.core {
 /**
  * The contract between concrete states and the StateMachine framework.
  */
-public interface IState
-{
+public interface IState {
     /**
      * The name of the state
      */
     function get name():String;
 
-	/**
-	 * The number of transitions defined in this state
-	 */
-	function get length():int;
+	function get referringAction():String;
+
+    /**
+     * The number of transitions defined in this state
+     */
+    function get length():int;
 
     /**
      * Defines a transition.
@@ -44,6 +44,8 @@ public interface IState
      * @return the target state's name.
      */
     function getTarget( action:String ):String;
+
+
 
     /**
      * Destroy method.
