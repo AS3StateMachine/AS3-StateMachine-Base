@@ -1,11 +1,11 @@
 package org.osflash.statemachine.core {
-	public interface ILoggable{
-		/**
-		 * Allows wrapping of logging functionality within the StateMachine framework
-		 * @param msg The message to log
-		 * @param level The level at which to set the message
-		 */
-		function log( msg:String, level:int = 2 ):void;
-		
-	}
+public interface ILoggable {
+    /**
+     * Allows wrapping of logging functionality within the StateMachine framework
+     * @param msg The message to log
+     */
+    function log( msg:String ):void;
+    function logPhase( phase:ITransitionPhase, stateName:String = ""  ):void;
+
+}
 }
