@@ -1,5 +1,11 @@
 h2. Change log
 
+h3. AS3-StateMachine-Base-V1-3-000: 17/03/2011
+* ILoggable: now allows each phase logging to be individually activated
+  by using bit-masking and the new ITransitionPhase
+* ITransitionPhase: interface for describing a transition phase
+* IState: added referringAction getter
+
 h3. AS3-StateMachine-Base-V1-2-000: 31/12/2010
 * ILoggable: added interface for capturing log messages.
 * TraceStateLogger: implementation of ILoggable that wraps a trace statement.
