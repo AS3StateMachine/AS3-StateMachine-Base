@@ -11,5 +11,7 @@ public interface ITransitionPhase {
     function get name():String;
 
     function get index():int;
+
+    function equals( value:Object ):Boolean;
 }
 }
