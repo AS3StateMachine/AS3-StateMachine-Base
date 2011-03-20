@@ -10,6 +10,7 @@ import org.osflash.statemachine.core.ILoggable;
 import org.osflash.statemachine.core.IStateMachine;
 import org.osflash.statemachine.core.ITransitionController;
 import org.osflash.statemachine.core.ITransitionPhase;
+import org.osflash.statemachine.errors.StateDecodeError;
 import org.osflash.statemachine.errors.StateTransitionError;
 
 /**
@@ -25,6 +26,8 @@ import org.osflash.statemachine.errors.StateTransitionError;
  * @ see BaseTransitionController
  */
 public class StateMachine implements IStateMachine, ILoggable {
+
+     private static const NO_INITIAL_STATE_DECLARED:String = "Initial state not defined or is referring to a state that is not defined";
 
     /**
      * Map of States objects by name.
@@ -77,6 +80,8 @@ public class StateMachine implements IStateMachine, ILoggable {
     public function onRegister():void {
         if (_initial)
             transitionTo(_initial, null);
+        else
+            throw new StateDecodeError( NO_INITIAL_STATE_DECLARED )
     }
 
     /**
