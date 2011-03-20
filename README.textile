@@ -1,6 +1,6 @@
 h2. Finite State Machine: An AS3 utility
 
-Version 1.3.000
+Version 1.3.004
 This utility is a re-architecturing of the "pureMVC original":http://trac.puremvc.org/Utility_AS3_StateMachine with the following notice:
 
 Copyright (c) 2008 Neil Manuell, Cliff Hall.

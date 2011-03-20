@@ -1,5 +1,11 @@
 h2. Change log
 
+h3. AS3-StateMachine-Base-V1-3-004: 20/03/2011
+* ITransitionPhase: added equals method of comparison with other
+  objects.
+* Added StateDecodeError
+
+
 h3. AS3-StateMachine-Base-V1-3-000: 17/03/2011
 * ILoggable: now allows each phase logging to be individually activated
   by using bit-masking and the new ITransitionPhase
